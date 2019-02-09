@@ -1,13 +1,12 @@
-
 import math
-
 from selenium import webdriver
-
 from collections import defaultdict
 from bs4 import BeautifulSoup as bs
 
 
 def pull_url(url):
+
+    STANDARD_PAGE_SIZE = 28
 
     browser = webdriver.Chrome()
     target_url = url
@@ -19,7 +18,7 @@ def pull_url(url):
     num_films = page.find('h1', attrs={'class': 'section-heading'}).get_text()[-8:]
     total_count = int(num_films[0:2])
 
-    page_count = math.ceil(total_count / 28)
+    page_count = math.ceil(total_count / STANDARD_PAGE_SIZE)
 
     movie_list = []
 
@@ -36,10 +35,8 @@ def pull_url(url):
                 movie_list.append(movie.get_text())
 
         return movie_list
-
     else:
-        return movie_list
-    
+        return movie_list    
 
 
 def process_friends(friend_list):
@@ -47,7 +44,6 @@ def process_friends(friend_list):
     movie_bag = []
 
     for name in friend_list:
-
         search_path = 'https://letterboxd.com/' + name + '/watchlist/'
         movie_bag.append(pull_url(search_path))    
 
@@ -73,9 +69,11 @@ def find_films_in_common(film_bag):
 
     return
 
+
 def main():
 
     FRIENDS = ['joshkeating', 'samwiseg', 'ekatnic', 'tanyan15', 'paquinn']
+
     bag = process_friends(FRIENDS)
     find_films_in_common(bag)
 
