@@ -1,6 +1,6 @@
 # Find film watchlist overlap
 
-Given that you and enough of your friends use the watchlist feature on [letterboxd.com](https://letterboxd.com/), this helps find films that your friends want to watch.
+Given that you and enough of your friends use the watchlist feature on [letterboxd.com](https://letterboxd.com/), this helps find films that both you and your friends want to watch.
 
 ## Requirements
 
