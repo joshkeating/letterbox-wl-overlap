@@ -60,7 +60,7 @@ def find_films_in_common(film_bag):
 
     desc_dict = sorted(film_dict.items() , key=lambda t : t[1] , reverse=True)
     
-    output_file = open("movie-list.txt", "w")
+    output_file = open("movies-in-common.txt", "w")
 
     for k,v in desc_dict:
         output_file.write(k + ' ' + str(v) + '\n')
