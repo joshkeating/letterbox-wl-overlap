@@ -72,7 +72,7 @@ def find_films_in_common(film_bag):
 
 def main():
 
-    FRIENDS = ['joshkeating', 'samwiseg', 'ekatnic', 'tanyan15', 'paquinn']
+    FRIENDS = ['joshkeating', 'ekatnic', 'paquinn', 'cjp123']
 
     bag = process_friends(FRIENDS)
     find_films_in_common(bag)
